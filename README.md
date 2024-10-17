@@ -32,6 +32,17 @@ Run the script to generate the WAV files and play the clipped sine wave:
 '''bash 
 python clipped.py
 '''
+## Sources:
+
+- to generate the time points for the sine wave
+
+https://stackoverflow.com/questions/61739446/using-numpy-linspace-method-for-a-simpleaudio-project-i-get-a-typeerror-when
+
+- convert to 16-bit signed integers 
+https://stackoverflow.com/questions/55474025/how-to-convert-int32-numpy-array-into-int16-numpy-array
+
+https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.io.wavfile.write.html
+
 
 
 [Enginnering Notebook](notebook.md)
