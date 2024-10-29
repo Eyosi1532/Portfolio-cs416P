@@ -103,3 +103,35 @@ Engineering notebook
 	- Some instruments are monophonic, playing only one note at the time, while others allow polyphony, where multiple notes overlap. 
 
 
+# week 4
+## FIR filters Vs IIR filters 
+
+### FIR filters 
+- Impuls: Finite, as the output depends on a finite number of input samples.
+- Stability: Always stable, since there is no feedback loop. 
+- Design Flexibility: Easier to design with predictable frequency response characteristics 
+- Implementation: Easier to implement in floating-point and fixed-point due to stability and lack of feedback 
+
+### IIR filters 
+- Impuls: Infinite, as it uses feedback, causing the response to continue indefinitely. 
+- Stability: Potentially unstable if not designed carefully, due to feedback. 
+Design Flexibility: More complex to design due to feedback; common to use standard methods
+Implementation: Preferably implemented in floating-point due to potential for large or small intermediate values. 
+
+
+#### conclusion: FIR filtes are easier to implement and stable, while IIR filters offer better performance per calculation. For many applications, Standard filter designs are available for both FIR and IIR, making it practical to look up designs rather than derive them manually.
+
+
+## Resampling 
+
+- In digital audio processin, resampling is the process of converting a single from one sample rate to another. This is essential for compatibility between systems and devices that operate at different rates. 
+
+- Nyquist: if we change sample rates without addressing freqencies beyond the new Nyquist limit, we risk aliasing, causing distortion and unwanted frequencies in the output. 
+
+### Resampling methods: 
+#### 1. Low-Pass Filtering:
+- To downsample, filter out frequencies above half of the target sample rate before taking fewe samples. 
+- To upsample, insert zeros between sample and apply a low-pass filters to smooth the output signal. 
+
+#### 2. Difital Filtering 
+- Finite Impulse Response(FIR) filters can be used here, where the output is calculated using a weighted sum of previous samples with filter coefficients that act as a low-pass filter. 
