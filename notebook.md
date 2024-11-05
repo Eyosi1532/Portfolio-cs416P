@@ -135,3 +135,42 @@ Implementation: Preferably implemented in floating-point due to potential for la
 
 #### 2. Difital Filtering 
 - Finite Impulse Response(FIR) filters can be used here, where the output is calculated using a weighted sum of previous samples with filter coefficients that act as a low-pass filter. 
+
+
+# week5: Audio Effects and Processing 
+## Overview of Audio Effects 
+Audio effects modify an input sound to produce a different, often enhanced, version. These effects are widely used in commercial audio production to refine and improve sound quality or create artistic transformations. 
+	- Read-Time Effects: Effects that operate on live audio must handle issues like low latency and simple hardware setups. 
+	- Chains of Effects: Multiple effects are often applied in sequence, formating a Directed Acyclic Graph(DAG) for signal processing. 
+
+## Types of Audio Effects
+### 1. Compression and Expression: 
+	- Compression: Reduces the dynamic range of the signal, making softer sounds louder and limiting louder sounds. Often used to maintain consistent volume levels. 
+	- Expansion: Increases the dynamic range, making changes in volume more pronounced. 
+### 2. Distortion and Noise Effects: 
+	- Distortion: Alters the waveform by clipping or saturating the signal. Common examples include simulating tube amplifier distortion for "warmth."
+	- Noise Addition: Adds modulated noise to a signal, such as white noise or frequency modulated noise. 
+### 3. Delay Effects:
+	- Small Delay: Creates phase cancellation and localization effects. 
+	- Modderate Delays: Produces "ensemble" effects. 
+	- Longer Delays: Generate reverb or echo effects by feeding back delayed signals. 
+### 4. Reverb and Room Effects: 
+	- Simulates the acoustic reflections and resonance of sound in a room. Delayed copies of the signal are filtered and fed back into the input for added realism. 
+
+### 5. Modulation Effects: 
+	- Vibrato: Oscillates the pitch of the sound. 
+	- Tremolo: Oscillates the volume of the sound. 
+	- Flanger: Mixes the original signal with a delayed version, creating phase cancellation patterns. 
+	- Phaser: Similar to flanging but uses a series of all-pass filters to achieve the effect. 
+	- Chorus: uses multiple delayes with varied times to simulate multiple voice or instruments playing the same melody. 
+
+### 6. Resampling: 
+	- Changing the sample rate of a signal, often for pitch shifting or time stretching. 
+	- Pitch Shifting: Modifies the frequency of the signal without changing its duration. 
+	- Time Stretching: Changes the length of the sound while preserving pitch. 
+
+## Effects Plugins and Architecture
+### Plugins: Modular pieces of software designed to be loaded into Digital Audio Workstations or other host environments to apply effects to audio. 
+	- VST(Virtual Studio Technology): One of the most widely-used plugin formats, offering thousands of effects and instruments. 
+	- LADSPA and LV2(Linux Audio Developer's Simple Plugin API): Popular in open-source and Linux audio environments, these plugin architectures provide a streamlined framework for adding audio effects to a system. 
+	- JACK and Pipwire: Linux focused low-latency audio servers designed for professional grade audio processing, making them suitable for real-time performace or studio work. 
