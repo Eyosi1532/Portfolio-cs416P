@@ -9,6 +9,7 @@ Welcome to my CS416 portfolio for Computers, Sound And Music Fall term cource. T
 ## Overview 
 This project consists of Python program that generates a WAV files 
 
+# Clipped assignment 
 ## Objectives 
 1. **Generate and Save a Sine Wave**: 
 - Create a 440 Hz sine wave and save it as 'sine.wav' with follwoing specifications: 
@@ -43,6 +44,15 @@ https://stackoverflow.com/questions/55474025/how-to-convert-int32-numpy-array-in
 
 https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.io.wavfile.write.html
 
+
+# FIR lowpas filter 
+### FIR Lowpass Filter:
+- A simple FIR lowpass filter implemented to process audio signals.  
+- This project demonstrates the design and application of a basic FIR lowpass filter. The filter attenuates high-frequecy noise while allowing low-frequency components to pass through, showcasing the principles of FIR filtering in audio signal processing. 
+### Requirments: 
+-scipy
+-soundevice 
+-matplotlib
 
 
 [Enginnering Notebook](notebook.md)

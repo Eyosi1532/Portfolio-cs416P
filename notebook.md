@@ -136,6 +136,17 @@ Implementation: Preferably implemented in floating-point due to potential for la
 #### 2. Difital Filtering 
 - Finite Impulse Response(FIR) filters can be used here, where the output is calculated using a weighted sum of previous samples with filter coefficients that act as a low-pass filter. 
 
+## Expirment: FIR_lowpass_filter.py
+- This week I implemented a python program called FIR_lowpass_filter.py
+- Design and implement a simple FIR lowpass filter to process audio signals. The filter should reduce high-frequency noise while maintaining the integrity of low-frequency components.
+#### Implementation:  
+   - I used Python and the `scipy.io.wavfile` library to read and write WAV files.
+   - I implemented the filter using a loop that applies the averaging formula to each sample.
+   - I used the `sounddevice` library to play back the filtered audio and `matplotlib` to visualize the effects of the filter.
+#### Results: 
+   - The filter successfully reduced high-frequency noise, resulting in a smoother, less sharp audio signal.
+   - I plotted the first 1000 samples of both the original and filtered signals for visual comparison, which showed a noticeable smoothing effect on the filtered signal.
+
 
 # week5: Audio Effects and Processing 
 ## Overview of Audio Effects 
@@ -174,3 +185,60 @@ Audio effects modify an input sound to produce a different, often enhanced, vers
 	- VST(Virtual Studio Technology): One of the most widely-used plugin formats, offering thousands of effects and instruments. 
 	- LADSPA and LV2(Linux Audio Developer's Simple Plugin API): Popular in open-source and Linux audio environments, these plugin architectures provide a streamlined framework for adding audio effects to a system. 
 	- JACK and Pipwire: Linux focused low-latency audio servers designed for professional grade audio processing, making them suitable for real-time performace or studio work. 
+
+# week6
+
+## Psychoacousics: Volume and Loudness 
+### 1. Robinson-Dadson Curve(Fletcher-Munson Curve)
+	- The Fletcher-Munson curve (also known as the Robinson-Dadson curve) illustrates the sensitivity of the human ear to different frequencies at various sound pressure levels. It shows how humans perceive volume, indicating that our ears are less sensitive to very low and very high frequencies at moderate loudness levels.
+	- Three frequency bands were highlighted:
+		-Below 100 Hz: Perception is less sensitive, with sound often felt rather than heard.
+		- 100-400 Hz (Bass): Where the "bass" sounds lie.	
+		- 400 Hz - 2 kHz (Midrange): Crucial for speech and many musical instruments.
+		-2-10 kHz (Treble): Includes the brightness of sounds but less critical than midrange.
+		- Above 10 kHz: Typically falls off in perceived loudness.
+### 2. Volume Bands in Phon 
+	- The human ear’s perception of volume is often measured in phon (dB relative to a 1 kHz tone).
+		- 40 phon: Low, primarily affecting the midrange.
+		- 50 phon: Normal, moderate midrange.
+		- 70 phon: Loud, flat across frequencies.
+		- 100+ phon: Aircraft-level volume, mostly affecting treble frequencies.
+
+### Psychoacoustics: Harmonics, Stretch Tuning, Masking
+	- Harmonics: Harmonics are multiples of the fundamental frequency and are important in the perception of timbre. For example, in a piano, the midrange harmonics of bass notes need to be stretch-tuned to sound in tune because the ear is more sensitive to midrange frequencies.
+	- Masking: The ear’s selective hearing means that low-frequency sounds are often masked by higher-frequency sounds, especially in complex audio signals.
+
+### Audio Compression
+
+#### 1. Compression Models
+
+	- Lossy Compression: Involves creating a simplified model of the audio signal, removing less critical data to reduce file size. Commonly used for MP3s and streaming services.
+	- Lossless Compression: Uses the original signal with only small changes, keeping all details intact. FLAC is a good example of lossless compression.
+#### 2. Types of Audio Compression
+	- Time-Domain Models: Audio can be modeled using smooth curves, polynomials, or splines.
+	- Frequency-Domain Models: Models the periodicity of audio signals by quantizing frequency and amplitude while ignoring phase.
+#### 4.Residue: 
+	- The difference between the original signal and the compressed model is called the residue, which is often perceived as noise. Compression schemes like Huffman coding exploit the distribution of this noise to further reduce file size.
+
+### Compression Techniques
+#### 1.Lossy Compression (e.g., MP3)
+
+	- MP3 compression splits the audio signal into multiple frequency bands and then quantizes them to reduce file size. It uses Discrete Cosine Transform (DCT) and Huffman encoding to achieve compression.
+	- MP3 Compression Steps:
+		- Frequency splitting via polyphase filter.
+		- FFT to analyze frequency content.
+		- DCT to create a power spectrum.
+		- Quantization and Huffman encoding of the spectrum.
+#### 2.Lossless Compression (e.g., FLAC)
+
+	- FLAC (Free Lossless Audio Codec) achieves compression by predicting audio content using polynomial models and encoding the difference (residue) using Rice codes.
+	- FLAC compresses audio without any loss of quality, though it is not as efficient as lossy compression for some types of audio.
+
+### Psychoacoustics and Practical Applications
+#### Stereo Compression: 
+- In stereo sound, left and right channels are highly correlated. By using techniques such as mono channels and side channels, stereo audio can be compressed efficiently without significant loss of quality.
+#### Downsampling: 
+- Since most audio signals contain minimal information at higher frequencies, downsampling reduces file size by preserving lower frequencies while discarding high-frequency information.
+
+# week7
+
