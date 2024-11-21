@@ -53,8 +53,16 @@ https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.io.wavfile.wri
 -scipy
 -soundevice 
 -matplotlib
+-replace clipped.wav with your own wave file. 
 
+# C_major_scale.py
+- This Python script generates and plays a C major scale using sine waves for each note. The scale is created based on the frequencies of the C major scale in the 12-tone equal temperament system. The program saves the scale as a WAV file and plays it using the `sounddevice` library.
 
+### Requirements: 
+- scipy
+-sounddevice
+-numpy
+ 
 [Enginnering Notebook](notebook.md)
 - this contains a dated diary entries of my work and progress 
 

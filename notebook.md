@@ -241,4 +241,44 @@ Audio effects modify an input sound to produce a different, often enhanced, vers
 - Since most audio signals contain minimal information at higher frequencies, downsampling reduces file size by preserving lower frequencies while discarding high-frequency information.
 
 # week7
+## Music Basics:
+
+Music: Defined as sounds that are pleasing to people. Focus is on classical music within the Western scale system, including notes, scales, and chords.
+
+### Relative Pitch:
+
+- The ear often perceives relative pitch rather than absolute pitch. The same pitch relationship can be expressed with different base frequencies.
+
+### Piano Keyboard and Scales:
+
+- The C major scale has seven notes: C, D, E, F, G, A, B. The intervals between them are made of half-steps.
+- The black keys (sharps and flats) are named based on their position relative to the white keys.
+
+### Note Duration and Time Signatures:
+- Note duration is defined in beats, typically ranging from 1/16 to 4 beats.
+- Time signature groups beats into measures (e.g., 4/4, commonly used in Western music).
+
+### Music Notation and Recording:
+- Music can be recorded using various formats like MIDI and piano roll notation. Traditional classical notation is commonly used for legibility.
+- MIDI captures keyboard actions for replay, while piano roll notation help understand musical structure, especially for beginners.
+
+### The Equal-Tempered Scale:
+The equal-tempered scale is a compromise that allows easy transitions between keys, but it sacrifices "perfect" intervals, particularly with thirds.
+
+### Chords and Harmony:
+- Polyphony involves multiple notes played together, while the basic three-note chord involves using the root, third, and fifth notes of a scale.
+- Roman numeral notation is used for chord progression in classical music (e.g., I, ii, iii,...).
+
+## Expirment: 
+### c_major_scale.py
+- This experiment involves generating and playing a C major scale using sine waves for each note. The program creates each note's corresponding frequency based on the 12-tone equal temperament system, saves the scale as a WAV file, and plays it back using the sounddevice library.
+- I used standard frequencies for the notes in the C major scale (C, D, E, F, G, A, B, C. These frequencies are based on the equal temperament tuning system.
+
+- The sine waves for each note in the C major scale were concatenated and normalized to fit within the 16-bit WAV format.
+### Results:
+
+- The program successfully generated and played the C major scale.
+- The WAV file (c_major_scale.wav) was saved and can be played back on any audio player.
+- The sound produced corresponds to the notes of the C major scale, confirming that the sine wave generation was correct.
+
 
