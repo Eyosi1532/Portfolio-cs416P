@@ -60,9 +60,18 @@ https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.io.wavfile.wri
 
 ### Requirements: 
 - scipy
--sounddevice
--numpy
- 
+- sounddevice
+- numpy
+
+# Adaptive Tone Control
+- This code provides a method for adjusting the energy in different frequency bands of an audio file. Using FFT, the audio is analyzed in the frequency domain, and enery levels in the low, mid, and high-frequency bands are equalized using bandpass filters. The resulting audio can be played back and saved to a new wave file. 
+
+### Requirements: 
+- scipy
+- numpy
+- sounddevice
+- scipy.io.wavefile
+
 [Enginnering Notebook](notebook.md)
 - this contains a dated diary entries of my work and progress 
 

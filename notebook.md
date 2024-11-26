@@ -136,7 +136,7 @@ Implementation: Preferably implemented in floating-point due to potential for la
 #### 2. Difital Filtering 
 - Finite Impulse Response(FIR) filters can be used here, where the output is calculated using a weighted sum of previous samples with filter coefficients that act as a low-pass filter. 
 
-## Expirment: FIR_lowpass_filter.py
+## Experiment: FIR_lowpass_filter.py
 - This week I implemented a python program called FIR_lowpass_filter.py
 - Design and implement a simple FIR lowpass filter to process audio signals. The filter should reduce high-frequency noise while maintaining the integrity of low-frequency components.
 #### Implementation:  
@@ -269,8 +269,7 @@ The equal-tempered scale is a compromise that allows easy transitions between ke
 - Polyphony involves multiple notes played together, while the basic three-note chord involves using the root, third, and fifth notes of a scale.
 - Roman numeral notation is used for chord progression in classical music (e.g., I, ii, iii,...).
 
-## Expirment: 
-### c_major_scale.py
+## Experiment: c_major_scale.py
 - This experiment involves generating and playing a C major scale using sine waves for each note. The program creates each note's corresponding frequency based on the 12-tone equal temperament system, saves the scale as a WAV file, and plays it back using the sounddevice library.
 - I used standard frequencies for the notes in the C major scale (C, D, E, F, G, A, B, C. These frequencies are based on the equal temperament tuning system.
 
@@ -281,4 +280,23 @@ The equal-tempered scale is a compromise that allows easy transitions between ke
 - The WAV file (c_major_scale.wav) was saved and can be played back on any audio player.
 - The sound produced corresponds to the notes of the C major scale, confirming that the sine wave generation was correct.
 
+# week8
 
+## Assignment: Adaptive TOne Control 
+- This week I worked on the this assignment which is it demonstrates the process of manipulating an audio waveform by measuring the energy in different frequency bands and adjusting the energy of each band to achieve a balanced output. 
+### features: 
+- Reading the WAV file
+- Frequency Domain Conversion
+- Energy Calculation 
+- Energy Normalization 
+- Tone FIltering 
+- Inverse FFT and Playback
+
+### key points: 
+- FFT(Fast Fourier Transform): is a mathematical algorithm used to convert a time-domain signal into the frequency domain. It provides insight into the frequency components of an audio signal. 
+
+- Energy Calculation in Frequency Bands: The energy in each frequency band is determined by the squared magnitude of the FFT coefficients, representing how much of the signal is contained within each frequency range. 
+
+- Bandpass Filters: Filters that allow frequencies within a specific range to pass while attenuating frequencies outside the range. 
+
+- Signal Processing: The manipulation of the frequency spectrum of an audio signal to achieve a desired result, such as balancing the energy across frequency bands. 
