@@ -269,7 +269,11 @@ The equal-tempered scale is a compromise that allows easy transitions between ke
 - Polyphony involves multiple notes played together, while the basic three-note chord involves using the root, third, and fifth notes of a scale.
 - Roman numeral notation is used for chord progression in classical music (e.g., I, ii, iii,...).
 
+<<<<<<< HEAD
 ## Experiment: c_major_scale.py
+=======
+## Experiment: 
+### c_major_scale.py
 - This experiment involves generating and playing a C major scale using sine waves for each note. The program creates each note's corresponding frequency based on the 12-tone equal temperament system, saves the scale as a WAV file, and plays it back using the sounddevice library.
 - I used standard frequencies for the notes in the C major scale (C, D, E, F, G, A, B, C. These frequencies are based on the equal temperament tuning system.
 
