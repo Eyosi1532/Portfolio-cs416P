@@ -72,10 +72,39 @@ https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.io.wavfile.wri
 - sounddevice
 - scipy.io.wavefile
 
+# My Project 
+# Audio Effects Processor
+
+A Python-based command-line tool for applying various audio effects to WAV files, including volume adjustment, bass boost, delay, reverb, and robot voice effects. The program also supports voice removal from stereo tracks.
+
+## Features
+
+- **Volume Adjustment**: Amplify or reduce the audio volume.
+- **Bass Boost**: Enhance low-frequency sounds for a deeper tone.
+- **Delay Effect**: Add an echo-like delay to the audio.
+- **Reverb Effect**: Simulate environmental reverberation, such as a hall or room.
+- **Robot Voice**: Apply a robotic sound effect to the audio.
+- **Voice Removal**: Remove vocals from stereo tracks by isolating the center-panned channel.
+
+## Requirements
+
+This program requires Python and the following Python libraries:
+
+- `numpy`
+- `soundfile`
+- `sounddevice`
+- `scipy`
+
+You can install the required libraries using pip:
+
+```bash
+pip install numpy soundfile sounddevice scipy
+
 [Enginnering Notebook](notebook.md)
 - this contains a dated diary entries of my work and progress 
 
 [Code](code/)
 - this contains all programming assignment codes 
+
 
 

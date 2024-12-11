@@ -304,3 +304,29 @@ The equal-tempered scale is a compromise that allows easy transitions between ke
 - Bandpass Filters: Filters that allow frequencies within a specific range to pass while attenuating frequencies outside the range. 
 
 - Signal Processing: The manipulation of the frequency spectrum of an audio signal to achieve a desired result, such as balancing the energy across frequency bands. 
+
+# final project 
+## project name: audio_effect_processor: 
+
+### Objective
+- Develop a Python program to apply audio effects (volume, bass, delay, reverb, robot voice, and voice removal) to WAV files.
+### How It Works
+- Input/Output: Reads a WAV file, processes audio with effects, and saves it to an output file.
+- Effects:
+	- Volume: Scales audio amplitude.
+	- Bass Boost: Enhances low frequencies.
+	- Delay/Reverb: Adds echo and spatial effects.
+	- Robot Voice: Applies modulation for robotic tones.
+	- Voice Removal: Subtracts stereo channels for vocals.
+- Playback: Plays the processed audio with sounddevice.
+### What I Learned
+- Signal processing techniques: modulation, filtering, and normalization.
+- Handling stereo vs. mono audio in Python.
+- Using argparse for command-line interfaces.
+- Real-time audio playback and graceful program termination.
+### Challenges
+- Short audio handling and ensuring compatibility with all effects.
+- Implementing robust error handling for file and playback issues.
+### Future Improvements
+- Add advanced effects like pitch shifting.
+- Develop a GUI for user-friendly interaction.
