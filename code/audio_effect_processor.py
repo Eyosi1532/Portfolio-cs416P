@@ -16,36 +16,62 @@ signal.signal(signal.SIGINT, signal_handler)
 
 def apply_volume(data, volume_factor):
     """Adjust volume."""
-    return np.clip(data * volume_factor, -1.0, 1.0)
+    if data.ndim == 1:  # Mono audio
+        return np.clip(data * volume_factor, -1.0, 1.0)
+    elif data.ndim == 2:  # Stereo audio
+        return np.column_stack((np.clip(data[:, 0] * volume_factor, -1.0, 1.0),
+                                np.clip(data[:, 1] * volume_factor, -1.0, 1.0)))
 
 def apply_bass(data, bass_gain):
     """Boost bass frequencies."""
     b = [0.2]
     a = [1, -bass_gain]
-    return lfilter(b, a, data)
+    if data.ndim == 1:  # Mono audio
+        return lfilter(b, a, data)
+    elif data.ndim == 2:  # Stereo audio
+        return np.column_stack((lfilter(b, a, data[:, 0]),
+                                lfilter(b, a, data[:, 1])))
 
 def apply_delay(data, rate, delay_sec, decay_factor):
     """Apply a delay effect."""
     delay_samples = int(rate * delay_sec)
-    delayed = np.zeros(len(data) + delay_samples)
-    delayed[:len(data)] = data
-    for i in range(delay_samples, len(delayed)):
-        delayed[i] += delayed[i - delay_samples] * decay_factor
-    return delayed[:len(data)]
+    if data.ndim == 1:  # Mono audio
+        delayed = np.zeros(len(data) + delay_samples)
+        delayed[:len(data)] = data
+        for i in range(delay_samples, len(delayed)):
+            delayed[i] += delayed[i - delay_samples] * decay_factor
+        return delayed[:len(data)]
+    elif data.ndim == 2:  # Stereo audio
+        delayed = np.zeros((len(data) + delay_samples, 2))
+        delayed[:len(data), :] = data
+        for i in range(delay_samples, len(delayed)):
+            delayed[i, 0] += delayed[i - delay_samples, 0] * decay_factor  # Left channel
+            delayed[i, 1] += delayed[i - delay_samples, 1] * decay_factor  # Right channel
+        return delayed[:len(data), :]
 
 def apply_reverb(data, rate, reverb_decay):
     """Apply a reverb effect."""
     decay_samples = int(rate * reverb_decay)
-    for i in range(decay_samples, len(data)):
-        data[i] += data[i - decay_samples] * 0.3
-    return np.clip(data, -1.0, 1.0)
+    if data.ndim == 1:  # Mono audio
+        for i in range(decay_samples, len(data)):
+            data[i] += data[i - decay_samples] * 0.3
+        return np.clip(data, -1.0, 1.0)
+    elif data.ndim == 2:  # Stereo audio
+        for i in range(decay_samples, len(data)):
+            data[i, 0] += data[i - decay_samples, 0] * 0.3  # Left channel
+            data[i, 1] += data[i - decay_samples, 1] * 0.3  # Right channel
+        return np.clip(data, -1.0, 1.0)
 
 def apply_robot_voice(data, rate):
     """Apply a robot-like voice effect."""
     mod_freq = 30  # Modulation frequency in Hz
     t = np.arange(len(data)) / rate
     mod_signal = np.sin(2 * np.pi * mod_freq * t)
-    return np.clip(data * mod_signal, -1.0, 1.0)
+    if data.ndim == 1:  # Mono audio
+        return np.clip(data * mod_signal, -1.0, 1.0)
+    elif data.ndim == 2:  # Stereo audio
+        return np.column_stack((np.clip(data[:, 0] * mod_signal, -1.0, 1.0),
+                                np.clip(data[:, 1] * mod_signal, -1.0, 1.0)))
 
 def apply_voice_removal(data):
     """Remove vocals by filtering the center channel."""

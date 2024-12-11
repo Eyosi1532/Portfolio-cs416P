@@ -71,6 +71,23 @@ https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.io.wavfile.wri
 - numpy
 - sounddevice
 - scipy.io.wavefile
+# popgen
+### Overview
+- popgen generates a pop-style melody using the Axis Progression chord loop, complete with bass, rhythm, and melody lines. The program outputs a WAV file or plays audio directly.
+
+### Features
+  Customizable chord progressions, melody range, and rhythm.
+- Supports sine, square, sawtooth, and triangle waveforms.
+- ADSR envelope for smooth note transitions.
+- Adjustable tempo, gain, and balance between melody and bass.
+
+### key arguments
+- --bpm
+- --waveform
+- --chord-loop
+- --melody-range
+- --output
+
 
 # My Project 
 # Audio Effects Processor
@@ -86,6 +103,15 @@ A Python-based command-line tool for applying various audio effects to WAV files
 - **Robot Voice**: Apply a robotic sound effect to the audio.
 - **Voice Removal**: Remove vocals from stereo tracks by isolating the center-panned channel.
 
+## Options and Flags 
+- --volume <factor>
+- --bass <factor>
+- --delay <delay_sec><decay_factor>
+- --reverb <reverb_decay>
+- --robot
+- --remove-voice
+
+
 ## Requirements
 
 This program requires Python and the following Python libraries:
@@ -95,7 +121,6 @@ This program requires Python and the following Python libraries:
 - `sounddevice`
 - `scipy`
 
-You can install the required libraries using pip:
 
 ```bash
 pip install numpy soundfile sounddevice scipy

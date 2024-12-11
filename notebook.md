@@ -304,6 +304,17 @@ The equal-tempered scale is a compromise that allows easy transitions between ke
 - Bandpass Filters: Filters that allow frequencies within a specific range to pass while attenuating frequencies outside the range. 
 
 - Signal Processing: The manipulation of the frequency spectrum of an audio signal to achieve a desired result, such as balancing the energy across frequency bands. 
+# week9 
+## popgen
+- this week I worked on the assignment popgen which generates a melody using axis progression chord loop, complete with bass, rythm and melody lines. 
+
+## wavetable
+- This content explores wavetable synthesis, focusing on looping for sustained notes, pitch shifting through resampling, and shaping sound with envelopes. Techniques like DFT-based looping and autocorrelation ensure smooth audio playback, balancing realism and efficiency.
+
+- It also highlights Soundfonts and General MIDI, standards for interoperable audio systems with predefined instruments and MIDI controls. These concepts are crucial for music production, virtual instruments, and sound design in games and media.
+
+## adv-synth
+- I learn about FM synthesis for creating harmonics and complex sounds efficiently, granular synthesis for time-stretching and pitch-shifting using sound granules, and physical modeling for realistic instrument simulation using physics. It also highlights synth architecture challenges like real-time sound generation, balancing efficiency, and handling input/output concurrency with the "pull model."
 
 # final project 
 ## project name: audio_effect_processor: 
