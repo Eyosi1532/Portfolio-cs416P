@@ -2,14 +2,11 @@
 
 Welcome to my CS416 portfolio for Computers, Sound And Music Fall term cource. This repository contains a collection of my work and activity throughout the cource. 
 
-# Repository collections 
-
 # assignment 1: Clipped 
 
 ## Overview 
 This project consists of Python program that generates a WAV files 
 
-# Clipped assignment 
 ## Objectives 
 1. **Generate and Save a Sine Wave**: 
 - Create a 440 Hz sine wave and save it as 'sine.wav' with follwoing specifications: 
@@ -45,7 +42,8 @@ https://stackoverflow.com/questions/55474025/how-to-convert-int32-numpy-array-in
 https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.io.wavfile.write.html
 
 
-# FIR lowpas filter 
+# FIR_lowpas_filter.py
+
 ### FIR Lowpass Filter:
 - A simple FIR lowpass filter implemented to process audio signals.  
 - This project demonstrates the design and application of a basic FIR lowpass filter. The filter attenuates high-frequecy noise while allowing low-frequency components to pass through, showcasing the principles of FIR filtering in audio signal processing. 
@@ -55,6 +53,7 @@ https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.io.wavfile.wri
 -matplotlib
 -replace clipped.wav with your own wave file. 
 
+
 # C_major_scale.py
 - This Python script generates and plays a C major scale using sine waves for each note. The scale is created based on the frequencies of the C major scale in the 12-tone equal temperament system. The program saves the scale as a WAV file and plays it using the `sounddevice` library.
 
@@ -63,7 +62,7 @@ https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.io.wavfile.wri
 - sounddevice
 - numpy
 
-# Adaptive Tone Control
+# Adaptive_control.py
 - This code provides a method for adjusting the energy in different frequency bands of an audio file. Using FFT, the audio is analyzed in the frequency domain, and enery levels in the low, mid, and high-frequency bands are equalized using bandpass filters. The resulting audio can be played back and saved to a new wave file. 
 
 ### Requirements: 
@@ -71,7 +70,8 @@ https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.io.wavfile.wri
 - numpy
 - sounddevice
 - scipy.io.wavefile
-# popgen
+# popgen.py
+
 ### Overview
 - popgen generates a pop-style melody using the Axis Progression chord loop, complete with bass, rhythm, and melody lines. The program outputs a WAV file or plays audio directly.
 
@@ -89,12 +89,11 @@ https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.io.wavfile.wri
 - --output
 
 
-# My Project 
-# Audio Effects Processor
+# My Project :Audio_effec_processor.py
 
-A Python-based command-line tool for applying various audio effects to WAV files, including volume adjustment, bass boost, delay, reverb, and robot voice effects. The program also supports voice removal from stereo tracks.
+- A Python-based command-line tool for applying various audio effects to WAV files, including volume adjustment, bass boost, delay, reverb, and robot voice effects. The program also supports voice removal from stereo tracks.
 
-## Features
+### Features
 
 - **Volume Adjustment**: Amplify or reduce the audio volume.
 - **Bass Boost**: Enhance low-frequency sounds for a deeper tone.
@@ -103,16 +102,15 @@ A Python-based command-line tool for applying various audio effects to WAV files
 - **Robot Voice**: Apply a robotic sound effect to the audio.
 - **Voice Removal**: Remove vocals from stereo tracks by isolating the center-panned channel.
 
-## Options and Flags 
+### Options and Flags 
 - --volume <factor>
 - --bass <factor>
 - --delay <delay_sec><decay_factor>
 - --reverb <reverb_decay>
 - --robot
-- --remove-voice
+- --remove-voice  
 
-
-## Requirements
+### Requirements
 
 This program requires Python and the following Python libraries:
 
@@ -121,9 +119,12 @@ This program requires Python and the following Python libraries:
 - `sounddevice`
 - `scipy`
 
+### example command: 
+- python audio_effect_processor.py input.wav output.wav --robot
+- python audio_effect_processor.py input.wav output.wav --remove_voice
 
-```bash
-pip install numpy soundfile sounddevice scipy
+
+# collections 
 
 [Enginnering Notebook](notebook.md)
 - this contains a dated diary entries of my work and progress 
